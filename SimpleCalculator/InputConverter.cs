@@ -4,10 +4,10 @@ namespace SimpleCalculator
 {
     public class InputConverter
     {
-        public double ConvertInputToNumeric(string argTextInput)
+        public static double ConvertInputToNumeric(string argTextInput)
         {
 
-            return int.Parse(argTextInput);
+            return double.Parse(argTextInput);
         }
     }
 }
