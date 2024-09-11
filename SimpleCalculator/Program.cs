@@ -13,7 +13,7 @@ namespace SimpleCalculator
             while (checkInput)
             {
                 Console.WriteLine("Input first number: ");
-                String input1 = Console.ReadLine();
+                string input1 = Console.ReadLine();
                 if (double.TryParse(input1, out double r))
                 {
                     firstNumber = InputConverter.ConvertInputToNumeric(input1);
@@ -30,11 +30,11 @@ namespace SimpleCalculator
             while (checkSecondInput)
             {
                 Console.WriteLine("Input second number: ");
-                String input2 = Console.ReadLine();
+                string input2 = Console.ReadLine();
                 if (double.TryParse(input2, out double r))
                 {
                     secondNumber = InputConverter.ConvertInputToNumeric(input2);
-                    checkInput = false;
+                    checkSecondInput = false;
                 }
                 else
                 {
@@ -42,12 +42,26 @@ namespace SimpleCalculator
                 }
             }
 
-
-            string operation = Console.ReadLine();
+            string[] operations = new string[]{"add", "subtract", "multiply", "divide", "+", "-", "*", "/"};
+            Boolean checkOperation = true;
+            string operation = null;
+            while (checkOperation)
+            {
+                Console.WriteLine("Input the operation: ");
+                operation = Console.ReadLine();
+                for (int i = 0; i < operations.Length; i++)
+                {
+                    if (operation == operations[i])
+                    {
+                        checkOperation = false;
+                    }
+                }
+                
+            }
 
             double result = calculatorEngine.Calculate(operation, firstNumber, secondNumber);
 
-            Console.WriteLine("The value " + firstNumber + " plus the value " + secondNumber + " is equal to " + result);
+            Console.WriteLine($"The result of the {operation} operation with numbers {firstNumber} and {secondNumber} is {result:F2}");
         }
     }
 }
