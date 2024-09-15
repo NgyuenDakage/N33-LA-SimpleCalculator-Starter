@@ -1,4 +1,5 @@
-﻿    using System;
+﻿using CalculatorEngine;
+using System;
 
 namespace SimpleCalculator
 {
@@ -6,8 +7,6 @@ namespace SimpleCalculator
     {
         static void Main(string[] args)
         {
-            CalculatorEngine calculatorEngine = new CalculatorEngine();
-
             double firstNumber = 0;
             Boolean checkInput = true;
             while (checkInput)
@@ -42,7 +41,7 @@ namespace SimpleCalculator
                 }
             }
 
-            string[] operations = new string[]{"add", "subtract", "multiply", "divide", "modulus","+", "-", "*", "/", "%"};
+            string[] operations = new string[]{"add", "subtract", "multiply", "divide", "+", "-", "*", "/"};
             Boolean checkOperation = true;
             string operation = null;
             while (checkOperation)
@@ -59,7 +58,9 @@ namespace SimpleCalculator
                 
             }
 
-            double result = calculatorEngine.Calculate(operation, firstNumber, secondNumber);
+            CalculatorTools tool = new CalculatorTools();
+
+            double result = tool.Calculate(operation, firstNumber, secondNumber);
 
             Console.WriteLine($"The result of the {operation} operation with numbers {firstNumber} and {secondNumber} is {result:F2}");
         }

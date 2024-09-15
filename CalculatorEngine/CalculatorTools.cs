@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace SimpleCalculator
+namespace CalculatorEngine
 {
-    public class CalculatorEngine
+    public class CalculatorTools
     {
         public double Calculate (string argOperation, double argFirstNumber, double argSecondNumber)
         {
