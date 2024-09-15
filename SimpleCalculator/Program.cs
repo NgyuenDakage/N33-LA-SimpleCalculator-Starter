@@ -42,7 +42,7 @@ namespace SimpleCalculator
                 }
             }
 
-            string[] operations = new string[]{"add", "subtract", "multiply", "divide", "+", "-", "*", "/"};
+            string[] operations = new string[]{"add", "subtract", "multiply", "divide", "modulus","+", "-", "*", "/", "%"};
             Boolean checkOperation = true;
             string operation = null;
             while (checkOperation)

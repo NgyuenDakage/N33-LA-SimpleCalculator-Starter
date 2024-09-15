@@ -23,6 +23,10 @@ namespace SimpleCalculator
             {
                 result = argFirstNumber / argSecondNumber;
             }
+            if (argOperation == "%" || argOperation.ToLower() == "modulus")
+            {
+                result = argFirstNumber % argSecondNumber;
+            }
 
             return result;
         }
